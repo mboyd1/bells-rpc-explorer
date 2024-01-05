@@ -81,16 +81,6 @@ function getMiningInfo() {
 	return tryCacheThenRpcApi(miscCache, "getMiningInfo", 1000, rpcApi.getMiningInfo);
 }
 
-function getUptimeSeconds() {
-	return tryCacheThenRpcApi(miscCache, "getUptimeSeconds", 1000, rpcApi.getUptimeSeconds);
-}
-
-function getChainTxStats(blockCount) {
-	return tryCacheThenRpcApi(miscCache, "getChainTxStats-" + blockCount, 120000, function() {
-		return rpcApi.getChainTxStats(blockCount);
-	});
-}
-
 function getPeerSummary() {
 	return new Promise(function(resolve, reject) {
 		tryCacheThenRpcApi(miscCache, "getpeerinfo", 1000, rpcApi.getPeerInfo).then(function(getpeerinfo) {
@@ -734,12 +724,10 @@ module.exports = {
 	getRawTransactions: getRawTransactions,
 	getRawTransactionsWithInputs: getRawTransactionsWithInputs,
 	getMempoolStats: getMempoolStats,
-	getUptimeSeconds: getUptimeSeconds,
 	getHelp: getHelp,
 	getRpcMethodHelp: getRpcMethodHelp,
 	getAddress: getAddress,
 	logCacheSizes: logCacheSizes,
 	getPeerSummary: getPeerSummary,
-	getChainTxStats: getChainTxStats,
 	getMempoolDetails: getMempoolDetails
 };

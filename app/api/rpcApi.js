@@ -22,20 +22,12 @@ function getMiningInfo() {
   return getRpcData("getmininginfo");
 }
 
-function getUptimeSeconds() {
-  return getRpcData("uptime");
-}
-
 function getPeerInfo() {
   return getRpcData("getpeerinfo");
 }
 
 function getRawMempool() {
   return getRpcDataWithParams("getrawmempool", true);
-}
-
-function getChainTxStats(blockCount) {
-  return getRpcDataWithParams("getchaintxstats", blockCount);
 }
 
 function getBlockByHeight(blockHeight) {
@@ -414,10 +406,8 @@ module.exports = {
   getRawTransaction: getRawTransaction,
   getRawTransactions: getRawTransactions,
   getRawMempool: getRawMempool,
-  getUptimeSeconds: getUptimeSeconds,
   getHelp: getHelp,
   getRpcMethodHelp: getRpcMethodHelp,
   getAddress: getAddress,
   getPeerInfo: getPeerInfo,
-  getChainTxStats: getChainTxStats
 };

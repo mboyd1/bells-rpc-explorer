@@ -45,9 +45,6 @@ router.get("/", function(req, res) {
 		if (getblockchaininfo.chain !== 'regtest') {
 			var chainTxStatsIntervals = [ 144, 144 * 7, 144 * 30, 144 * 265 ];
 			res.locals.chainTxStatsLabels = [ "24 hours", "1 week", "1 month", "1 year", "All time" ];
-			for (var i = 0; i < chainTxStatsIntervals.length; i++) {
-				promises.push(coreApi.getChainTxStats(chainTxStatsIntervals[i]));
-			}
 		}
 		res.locals.getblockchaininfo = getblockchaininfo;
 
@@ -58,7 +55,6 @@ router.get("/", function(req, res) {
 			}
 		}
 
-		promises.push(coreApi.getChainTxStats(getblockchaininfo.blocks - 1));
 
 		coreApi.getBlocksByHeight(blockHeights).then(function(latestBlocks) {
 			res.locals.latestBlocks = latestBlocks;
@@ -982,9 +978,6 @@ router.get("/tx-stats", function(req, res) {
 		//console.log("ints: " + JSON.stringify(chainTxStatsIntervals));
 
 		var promises = [];
-		for (var i = 0; i < chainTxStatsIntervals.length; i++) {
-			promises.push(coreApi.getChainTxStats(chainTxStatsIntervals[i]));
-		}
 
 		Promise.all(promises).then(function(results) {
 			res.locals.txStatResults = results;

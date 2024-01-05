@@ -1,7 +1,7 @@
 var credentials = require("./credentials.js");
 var coins = require("./coins.js");
 
-var currentCoin = "BSV";
+var currentCoin = "BEL";
 
 module.exports = {
 	cookiePassword: "0x000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f",
@@ -76,8 +76,8 @@ module.exports = {
 	electrumXServers:[
 		// set host & port of electrum servers to connect to
 		// protocol can be "tls" or "tcp", it defaults to "tcp" if port is 50001 and "tls" otherwise
-		{host: "sv1.hsmiths.com", port:60004, protocol: "ssl"},
-	    {host: "satoshi.vision.cash", port:50002, protocol: "ssl"},
+		{host: "127.0.0.1", port:50002, protocol: "ssl"},
+	        //{host: "127.0.0.1", port:50002, protocol: "ssl"},
 		// {host: "electrum.qtornado.com", port:50001, protocol: "tcp"},
 		// {host: "electrum.coinucopia.io", port:50001, protocol: "tcp"},
 
@@ -98,12 +98,11 @@ module.exports = {
 	siteTools:[
 
 
-		{name:"Node Status", url:"/node-status", desc:"Summary of this node: version, network, uptime, etc.", fontawesome:"fas fa-broadcast-tower"},
+		{name:"Node Status", url:"/node-status", desc:"Summary of this node: version, network, etc.", fontawesome:"fas fa-broadcast-tower"},
 		{name:"Peers", url:"/peers", desc:"Detailed info about the peers connected to this node.", fontawesome:"fas fa-sitemap"},
 
 		{name:"Browse Blocks", url:"/blocks", desc:"Browse all blocks in the blockchain.", fontawesome:"fas fa-cubes"},
-		{name:"Transaction Stats", url:"/tx-stats", desc:"See graphs of total transaction volume and transaction rates.", fontawesome:"fas fa-chart-bar"},
-
+		{name:"Transaction Stats", url:"", desc:"bellsd gettxstats not implemented.", fontawesome:"fas fa-chart-bar"},
 		{name:"Mempool Summary", url:"/mempool-summary", desc:"Detailed summary of the current mempool for this node.", fontawesome:"fas fa-clipboard-list"},
 		{name:"Unconfirmed Transactions", url:"/unconfirmed-tx", desc:"Browse unconfirmed/pending transactions.", fontawesome:"fas fa-unlock-alt"},
 
@@ -116,10 +115,10 @@ module.exports = {
 	],
 
 	donationAddresses:{
-		coins:["BSV"],
-		sites:{"BSV":"https://whatsonchain.com"},
+		coins:["BEL"],
+		sites:{"BEL":"https://explorer.minebells.com/address/BCpa21Gh52AtwAxhDTvQRRBtVcHvuVwFLT"},
 
-		"BSV":{address:"bitcoincash:qq7su5mghkkamjss3g87g3eejxf8f3excuekujtlev"},
+		"BEL":{address:"bells:BCpa21Gh52AtwAxhDTvQRRBtVcHvuVwFLT"},
 	},
 
 //	headerDropdownLinks: {

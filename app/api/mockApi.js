@@ -28,9 +28,6 @@ function getMempoolInfo() {
 	return getRpcData("getmempoolinfo");
 }
 
-function getUptimeSeconds() {
-	return getRpcData("uptime");
-}
 
 function getRawMempool() {
 	return getRpcDataWithParams("getrawmempool", true);
@@ -308,7 +305,6 @@ module.exports = {
 	getRawTransaction: getRawTransaction,
 	getRawTransactions: getRawTransactions,
 	getRawMempool: getRawMempool,
-	getUptimeSeconds: getUptimeSeconds,
 	getHelp: getHelp,
 	getRpcMethodHelp: getRpcMethodHelp,
 	getAddress: getAddress

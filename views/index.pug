@@ -161,18 +161,13 @@ block content
 					thead
 						tr
 							th
-							each item, index in chainTxStatsLabels
 								th #{item}
 					tbody
 						tr
 							th(class="text-left") Count
-							each item, index in chainTxStats
-								td(class="monospace") #{item.window_tx_count.toLocaleString()}
 
 						tr
 							th(class="text-left") Rate
-							each item, index in chainTxStats
-								td(class="monospace") #{new Decimal(item.txrate).toDecimalPlaces(4)}
 
 block endOfBody
 	script(async, defer, src="https://buttons.github.io/buttons.js")
