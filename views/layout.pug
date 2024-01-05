@@ -152,15 +152,15 @@ html(lang="en")
 									div(class="text-md-right text-center")
 									
 										each coin, index in config.donationAddresses.coins
-											div(style="display: inline-block; max-width: 150px;", class="text-center mb-3 word-wrap monospace", class=(index > 0 ? "ml-md-3" : false))
+											div(style="display: inline-block; max-width: 550px;", class="text-center mb-3 word-wrap monospace", class=(index > 0 ? "ml-md-3" : false))
 												//img(src=donationAddressQrCodeUrls[coin], alt=config.donationAddresses[coin].address, style="border: solid 1px #ccc;")
 												br
 												if (coinConfig.ticker == coin)
 													span #{coin} address: 
-													a(href=("/address/" + config.donationAddresses[coin].address)) #{"QR"}
+													a(href=("/address/" + config.donationAddresses[coin].address)) #{"BCpa21Gh52AtwAxhDTvQRRBtVcHvuVwFLT"}
 												else
 													span #{coin} address: 
-													a(href=(config.donationAddresses.sites[coin] + "/address/" + config.donationAddresses[coin].address)) #{"QR"}
+													a(href=(config.donationAddresses.sites[coin] + "/address/" + config.donationAddresses[coin].address)) #{"BCpa21Gh52AtwAxhDTvQRRBtVcHvuVwFLT"}
 
 		
 		script(src="https://code.jquery.com/jquery-3.3.1.min.js", integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=", crossorigin="anonymous")
